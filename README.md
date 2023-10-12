@@ -3,12 +3,17 @@
 ## 授業内コード
 1. 10月5日（木）はじめの一歩
 2. 10月5日（木）GitHub　リポジトリ作成
+3. 10月12日 (木) 文字列の連結、変数，定数、複合代入演算子、DOM操作
 
 ## 10月12日
 
 - リテラルと演算子
+- 文字列の連結
+- 変数と定数
+- 複合代入演算子
+- リストを操作するDOM操作のスクリプト
 
-###文字列の計算
+### 文字列の計算
 
 ```js
 //文字鉄の連結
@@ -20,8 +25,10 @@ console.log("計算結果:" + (123 + 456)); //文字列 + (数値の計算)
 console.log("2" - 1); //文字列　- 数値
 console.log("2" * 3); //文字列　* 数値
 console.log("2" / 4); //文字列　/ 数値
+```
 
-//変数の宣言・代入
+### 変数の宣言・代入
+```js
 let a; //変数の宣言 //ES6 = 2015
 a = 10; //値の代入(数値型)
 console.log(a);
@@ -38,20 +45,46 @@ console.log(PI);
 //再代入
 //PI = 3.1415926535;
 //const PI;
+```
 
-//複合代入演算子
+### 複合代入演算子
+```js
 let n = 5;
 n = n + 2;
 console.log(n);
 
-let n2 = 5;å
+let n2 = 5;
 n2 += 2; //複合代入演算子 n2 = n2 + 2と同じ。
 console.log(n2);
+```
 
-//インクリメント
+### インクリメント
+```js
 let n3 = 5;
 n3++; //インクリメント1足す
 console.log(n3);
+```
+
+### メロンを加える
+```js
+//ul要素を取り入れる
+const element = document.querySelector("ul");
+console.log(element);
+
+//selectorってCSSのセレクターなので、
+const element2 = document.querySelector("#fruitslist");
+console.log(element2);
+
+//classも行ける？
+const element3 = document.querySelector(".listbox__list");
+console.log(element3);
+
+
+//新しい要素を作るli
+const lilast = document.createElement("li");
+console.dir(lilast); //dirに変更。オブジェクトの中身が見える
+lilast.textContent = "メロン";
+console.log(lilast);//<li>メロン</li>←こうなる
 ```
 
 ## 10 月 5 日
