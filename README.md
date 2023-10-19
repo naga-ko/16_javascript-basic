@@ -153,6 +153,7 @@ console.log(lilast);//<li>メロン</li>←こうなる
     <title>演習</title>
 </head>
 <body>
+<script>
 </script>
 </body>
 </html>
