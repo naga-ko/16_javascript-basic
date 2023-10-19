@@ -4,6 +4,47 @@
 1. 10月5日（木）はじめの一歩
 2. 10月5日（木）GitHub　リポジトリ作成
 3. 10月12日 (木) 文字列の連結、変数，定数、複合代入演算子、DOM操作
+4. 10月19日　(木)　配列、for文,テンプレートリテラル
+
+## 10月19日
+- 配列
+- for文
+
+### htmlに入れる
+
+```js
+const element = document.querySelector(".recipe");//dl要素を取得
+const lilast = document.createElement("dd");//dd要素を作る
+lilast.textContent = "3分待ってできあがり";//ddの中に３分待って出来上がりを入れる
+element.appendChild(lilast);//lilastをhtmlに入れる
+```
+
+### 配列
+
+```js
+const name_list = ["松田", "田中", "中山", "山本", "本田"];//[]で閉じれば配列になる、添字は0から始まる
+console.log(name_list);//確認用
+```
+
+### for文
+
+```js
+const fruits = ["りんご", "もも", "バナナ"];
+
+for (let i = 0; i < fruits.length; i++) {// for(初期化処理; 条件式; 増分処理){処理}    fruits.lengthで配列の数を取得している
+    const element = document.querySelector("#fruitslist");//elementの宣言、#fruitslist要素を取得
+    const lilast = document.createElement("li");//lilastの中に<li></li>の作成
+    lilast.textContent = fruits[i];//lilastにりんご、もも、バナナを入れる
+    element.appendChild(lilast);//appendChildでhtmlに反映される
+}
+```
+
+### テンプレートリテラル
+
+```js
+console.log(`7✕${i + 1}=${7*(i + 1)}`);
+```
+
 
 ## 10月12日
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>複数要素の追加</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <h1>人気フルーツ一覧</h1>
+    <ul id="fruitslist" class="listbox__list"></ul>
+    <script>
+        const fruits = ["りんご", "もも", "バナナ"];
+
+        for (let i = 0; i < fruits.length; i++) {
+            const element = document.querySelector("#fruitslist");
+            const lilast = document.createElement("li");
+            lilast.textContent = fruits[i];
+            element.appendChild(lilast);
+        }
+
+        const menus = ["カリキュラム", "就職実績"];
+        for (let i = 0; i < menus.length; i++) {
+            const element = document.querySelector(".boxFooterLink");
+            const lilast = document.createElement("li");
+            lilast.textContent = menus[i];
+            element.appendChild(lilast);
+        }
+    </script>
+</body>
+
+</html>
