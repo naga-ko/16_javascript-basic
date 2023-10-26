@@ -5,6 +5,51 @@
 2. 10月5日（木）GitHub　リポジトリ作成
 3. 10月12日 (木) 文字列の連結、変数，定数、複合代入演算子、DOM操作
 4. 10月19日　(木)　配列、for文、テンプレートリテラル
+5. 10月26日　（木）
+
+## 10月26日
+- innerHTML
+- querySelectorAll
+
+### getElementsByClassName
+
+```js
+const class_element = document.getElementsByClassName("pool_b");
+console.log(class_element);//指定されたclass名の要素
+```
+
+### getElementsByTagName
+
+```js
+const tag_element = document.getElementsByTagName("li");
+console.log(tag_element);//指定されたタグ名の要素
+```
+
+### getElementById
+
+```js
+const id_element = document.getElementById("toparis");
+console.log(id_element);//id属性を取得したいとき
+```
+
+### querySelectorAll
+
+```js
+const nations_list = document.querySelectorAll("ul li");
+//もしくは、document.querySelectorAll("#toparis li");などでも可
+console.log(nations_list);
+//querySelectorAllを使うことで配列の中に入るので一つ一つ取得する必要がない
+```
+
+### innerHTML
+
+```js
+  const sweetpotatos = document.querySelector(".imo");
+  //innerHTMLプロパティで、中身を確認
+  console.log(sweetpotatos.innerHTML);
+  //innerHTMLに文字列でHTMLのタグを代入する。
+  sweetpotatos.innerHTML = "<li>べにはるか</li>";//appendchaildを使わなくてもinnerHTMLでできる
+```
 
 ## 10月19日
 - 配列
