@@ -5,11 +5,65 @@
 2. 10月5日（木）GitHub　リポジトリ作成
 3. 10月12日 (木) 文字列の連結、変数，定数、複合代入演算子、DOM操作
 4. 10月19日　(木)　配列、for文、テンプレートリテラル
-5. 10月26日　（木）
+5. 10月26日　（木）その他のdocumentの取得と挿入、イベント
 
 ## 10月26日
 - innerHTML
 - querySelectorAll
+- イベント
+
+### 文字色、文字の大きさをclassから変更
+
+```js
+<p><span>JavaScript</span>（ジャバスクリプト）とは、プログラミング言語のひとつである。</p>
+<button class="redder">赤くなる</button>
+<button class="bigger">大きくなる</button>
+//element.setAttribute("class","??")
+const text = document.querySelector("p span");
+const Btnr = document.querySelector(".redder");
+const Btnb = document.querySelector(".bigger");
+Btnr.addEventListener("click", function () {//クリックされたときテキストのクラスをredTextにする
+    text.setAttribute("class", "redText")
+});
+Btnb.addEventListener("click", function () {
+    text.setAttribute("class", "bigText")
+});
+```
+
+### 文字の色変更
+
+```js
+const redBtn = document.querySelector(".red");//レッドの取得
+const text = document.querySelector(".text");//テキストクラスの取得
+const textSpan = document.querySelector(".text span");//テキストの中のスパンを取得
+redBtn.addEventListener("click", function () {
+    console.dir(text)
+    text.style.color = "#ff0000";
+    textSpan.innerText = "赤";
+});
+```
+
+### 関数を作らずに処理
+
+```js
+//例）「ブラウザで発生する主なイベント」から"resize"（サイズが変更する）タイミングで console に文字が発生するようにします。
+//resizeは、DOM内にはありませんのでwindowで取得します。
+window.addEventListener("resize", function () {
+//ここに処理を書きます。
+console.log("サイズが変わりました。");
+});
+```
+
+### 関数有りの処理
+
+```js
+<button id="btn">ハンドラを起動する</button>
+function showMessage() {
+  alert("ハンドラが起動しました！");
+}
+let btn = document.querySelector("button");
+btn.addEventListener("click", showMessage);//加える＋イベント＋リスト
+```
 
 ### getElementsByClassName
 
