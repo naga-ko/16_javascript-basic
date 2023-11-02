@@ -6,6 +6,68 @@
 3. 10月12日 (木) 文字列の連結、変数，定数、複合代入演算子、DOM操作
 4. 10月19日　(木)　配列、for文、テンプレートリテラル
 5. 10月26日　（木）その他のdocumentの取得と挿入、イベント
+6. 11月2日　（木）　classlistととにかくイベント
+
+## 11月2日
+-
+
+### ノード操作演習
+```js
+//画像ファイル名は、配列から取得します。
+const fujiImg_list = ["mt-fuji001.jpg", "mt-fuji002.jpg", "mt-fuji003.jpg"];
+
+// 画像のタグ<img>要素を変数に取得
+const mt_img = document.querySelector(".photo img");
+
+//富士山のボタン全てを querySelectorAll で変数に取得
+const mtFujiBtn = document.querySelectorAll(".image-fuji");
+console.log(mtFujiBtn);
+
+//NodeList なので for 文でそれぞれのボタンに click イベントを登録する。(addEventListener)
+mtFujiBtn[0].addEventListener("click", function () {
+    mt_img.setAttribute("src", "images/mt-fuji001.jpg")
+});
+
+mtFujiBtn[1].addEventListener("click", function () {
+    mt_img.setAttribute("src", "images/mt-fuji002.jpg")
+});
+
+mtFujiBtn[2].addEventListener("click", function () {
+    mt_img.setAttribute("src", "images/mt-fuji003.jpg")
+});
+```
+
+### 背景
+
+```js
+const bodyelement = document.querySelector("body");
+console.dir(bodyelement);
+let counter = 0;
+const color_array = ["pink", "blue", "orange", "green", "tomato"]; //配列
+bodyelement.addEventListener("click", function () {//bodyelementがクリックされたとき
+    console.log(counter);
+    bodyelement.style.backgroundColor = color_array[counter]; //bodyelementの中のstyleの中のbackgroundColorを配列から選ぶ
+    counter++;//counter = counter + 1
+});
+```
+
+### ダンサー
+
+```js
+const dacingBtn = document.querySelector(".dancing");
+const stopBtn = document.querySelector(".stop");
+const changeBtn = document.querySelector(".change");
+const dancer = document.querySelector(".imgArea img");//要素の取得
+dacingBtn.addEventListener("click", function () {//dacingBtnをクリックされたとき
+    dancer.setAttribute("class", "dance")        //dancerのclassをdanceに変える
+});
+stopBtn.addEventListener("click", function () {  //removeAttribute
+    dancer.removeAttribute("class")              //dancerのclassを削除する
+});
+changeBtn.addEventListener("click", function () {
+    dancer.setAttribute("src", "images/ballet_woman.png") //dancerのsrc属性を変更する
+});
+```
 
 ## 10月26日
 - innerHTML

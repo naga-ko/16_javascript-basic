@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .redText {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <span>JavaScript</span>
+    <button class="redder">赤くなる</button>
+    <button class="bigger">大きくなる</button>
+
+    <script>
+        const text = document.querySelector("p span");
+        //赤くなるイベント
+        const redBtn = document.querySelector(".redder");
+        redBtn.addEventListener("click", function () {
+            //classListでトグル。
+            text.classlist.toggle("redText");
+            //redBtn.textContent = "もとに戻す";
+            redBtn.innerText = "もとに戻す";
+        });
+        //大きくなるイベント
+        const bigBtn = document.querySelector(".bigger");
+        bigBtn.addEventListener("click", function () {
+            text.classlist.toggle("bigText");
+            if (text.classList.contains("bigText")) {
+                bigBtn.innerText = "もとに戻す";
+            } else {
+                bigBtn.innerText = "大きくなる";
+            }
+
+        });
+    </script>
+</body>
+
+</html>
