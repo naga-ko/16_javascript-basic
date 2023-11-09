@@ -7,6 +7,38 @@
 4. 10月19日　(木)　配列、for文、テンプレートリテラル
 5. 10月26日　（木）その他のdocumentの取得と挿入、イベント
 6. 11月2日　（木）　classlistととにかくイベント
+7. 11月9日　（木） 条件分岐
+##　　11月９日
+-
+
+### 　右左
+
+```js
+const left = document.querySelector(".leftZone");
+const right = document.querySelector(".rightZone");
+console.dir(left);
+const widthsize = window.innerWidth; //現在のブラウザの横幅
+console.log(widthsize);
+//以下から記述していきます。
+document.body.addEventListener("click", function (event) {
+    console.log(event.clientX)
+    let hantei = widthsize / 2;
+    console.log(hantei);
+    if (hantei > event.clientX) {
+        let i = 0;
+        i++;
+        const left_li = document.createElement("li");
+        left_li.textContent = "左"
+        left.appendChild(left_li);
+    } else {
+        let i = 0;
+        i++;
+        const right_li = document.createElement("li");//エレメントを作る
+        right_li.textContent = "右"
+        right.appendChild(right_li);//追加
+    }
+});
+```
 
 ## 11月2日
 -
