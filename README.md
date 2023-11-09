@@ -9,7 +9,7 @@
 6. 11月2日　（木）　classlistととにかくイベント
 7. 11月9日　（木） 条件分岐
 ##　　11月９日
--
+-条件分岐
 
 ### 　右左
 
@@ -37,7 +37,7 @@ document.body.addEventListener("click", function (event) {
         right_li.textContent = "右"
         right.appendChild(right_li);//追加
     }
-});
+});//insertAdjacentHTML("beforeend")でもできる
 ```
 
 ## 11月2日
