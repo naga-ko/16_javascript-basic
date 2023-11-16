@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        section {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        img {
+            width: 50%;
+        }
+
+        .unit {
+            font-size: 1.5em;
+        }
+
+        .price p {
+            display: inline-block;
+        }
+
+        .order {
+            font-size: 1.2em;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1>醤油らーめん</h1>
+        <div class="ramenArea">
+            <img src="https://4.bp.blogspot.com/-SmXTKx3nBcA/UrlnHYwXxoI/AAAAAAAAcOA/erB3n3GC80E/s800/ramen_syouyu.png"
+                alt="醤油ラーメン">
+            <p class="unit"><span>450</span>円</p>
+        </div>
+        <div class="price">
+            <button class="minus">-</button>
+            <p class="num">0</p>
+            <button class="plus">+</button>
+        </div>
+        <button class="order">注文する</button>
+        <p class="result"></p>
+    </section>
+
+    <script>
+        const ramenPrice = 450;
+
+        document.querySelector('.plus').addEventListener('click', function () {
+            const numElement = document.querySelector('.num');
+            let num = parseInt(numElement.textContent);
+            num++;
+            numElement.textContent = num;
+        });
+
+        document.querySelector('.minus').addEventListener('click', function () {
+            const numElement = document.querySelector('.num');
+            let num = parseInt(numElement.textContent);
+            if (num > 0) {
+                num--;
+                numElement.textContent = num;
+            }
+        });
+
+        document.querySelector('.order').addEventListener('click', function () {
+            const num = parseInt(document.querySelector('.num').textContent);
+            const totalPrice = num * ramenPrice;
+            document.querySelector('.result').textContent = `合計金額: ${totalPrice}円`;
+        });
+    </script>
+
+</body>
+
+</html>

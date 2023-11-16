@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>カラーボタン</h1>
+    <div class="colorlist">
+        <button id="red">赤色</button>
+        <button id="blue">青色</button>
+        <button id="green">緑色</button>
+        <button id="yellow">黄色</button>
+        <button id="pink">桃色</button>
+        <button id="purple">紫色</button>
+    </div>
+    <script>
+
+        const button_list = document.querySelectorAll(".colorlist button");
+        console.log(button_list);
+        for (let i = 0; i < button_list.length; i++) {
+            button_list[i].addEventListener("click", function () {
+                const color = button_list[i].id;
+                console.log(color);
+                bodyelement.style.backgroundColor = color;
+            })
+        }
+    </script>
+</body>
+
+</html>

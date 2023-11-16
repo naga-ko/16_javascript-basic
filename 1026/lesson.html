@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演習</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        .text {
+            color: red;
+        }
+
+        .text .blue {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="text"><span>色の名前</span>色です。</p>
+
+    <button class="red">赤色</button>
+    <button class="blue">青色</button>
+    <button class="yellow">黄色</button>
+
+    <script>
+        //JavaScriptの中に必要な要素全部取得
+        //文字の色を変えてみましょう
+        //ボタンを取得する
+        const redBtn = document.querySelector(".red");
+        const text = document.querySelector(".text");
+        const textSpan = document.querySelector(".text span");
+        redBtn.addEventListener("click", function () {
+            console.dir(text)
+            text.style.color = "#ff0000";
+            textSpan.innerText = "赤";
+        });
+        const yellowBtn = document.querySelector(".yellow");
+        yellowBtn.addEventListener("click", function () {
+            console.dir(text)
+            text.style.color = "#ffff00";
+            textSpan.innerText = "黄";
+        });
+        const buluBtn = document.querySelector(".blue");
+        buluBtn.addEventListener("click", function () {
+            console.dir(text)
+            text.style.color = "#0000ff";
+            textSpan.innerText = "青";
+        });
+    </script>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            console.log("スクロールされました")
+        });
+    </script>
+</body>
+
+</html>

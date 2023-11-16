@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const age = Math.floor(Math.random() * 100);
+        let message;
+
+        //ここに記述
+        if (age < 18) {
+            message = "未成年";
+        } else if (age >= 18 && age < 65) {
+            message = "成人";
+        } else {
+            message = "シニア";
+        }
+        //ここまで
+        console.log(`年齢: ${age} 歳, メッセージ: ${message}`);
+    </script>
+</body>
+
+</html>

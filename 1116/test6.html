@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event</title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>
+        <span id="school" onclick="handleClick(this)">トライデントコンピュータ専門学校</span>は
+        <span id="location" onclick="handleClick(this)">愛知県名古屋市</span>にあり、1984年に
+        <span id="establishment" onclick="handleClick(this)">開校</span>。IT技術者
+        <span id="education" onclick="handleClick(this)">多数育成</span>。現在、情報処理系
+        <span id="departments" onclick="handleClick(this)">3学科</span>と
+        <span id="courses" onclick="handleClick(this)">CG／ゲーム開発／Webデザイン／CAD</span>などの学科もあり、卒業生の
+        <span id="employment" onclick="handleClick(this)">就職実績</span>も豊富です。
+    </p>
+
+    <script>
+        // クリックイベントを処理する関数
+        function handleClick(element) {
+            // テキストをコンソールに表示
+            console.log(element.textContent);
+
+            // テキストのスタイルを変更
+            element.classList.add('highlight');
+        }
+    </script>
+
+</body>
+
+</html>
