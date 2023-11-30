@@ -8,7 +8,91 @@
 5. 10月26日　（木）その他のdocumentの取得と挿入、イベント
 6. 11月2日　（木）　classlistととにかくイベント
 7. 11月9日　（木） 条件分岐
+8. 11月30日 （木）関数
 
+## 11月30日
+-関数
+
+### 配列を受け取る関数
+```html
+<div class="fnArea"></div>
+```
+```js
+const member_list = ["チェウォン", "サクラ", "ユンジン", "カズハ", "ウンチェ"];
+        const mugiwara_list = ["モンキー・D・ルフィ", "ナミ", "ロロノア・ゾロ", "ヴィンスモーク・サンジ", "ウソップ", "トニートニー・チョッパー", "ニコ・ロビン", "フランキー", "ブルック", "ジンベエ"];
+
+
+        //.fnAreaに上記の配列の要素を<li>で追加する関数
+        const memberarea = document.querySelector(".fnArea");
+        const memberPush = function (members) {
+            const ulElm = document.createElement("ul");
+            for (let i = 0; i < members.length; i++) {
+                const liElm = document.createElement("li");
+                liElm.textContent = members[i];
+                ulElm.appendChild(liElm);
+            }
+            document.querySelector(".fnArea").appendChild(ulElm);
+        }
+        memberPush(member_list);
+        memberPush(mugiwara_list);
+```
+### テンプレートリテラル
+
+```js
+const yoshinoya = function (don, size, tuika, kin) {
+            console.log(don + "の" + size + "、" + tuika + "で" + kin + "円");
+            console.log(`${don}の${size} ,${tuika}で${kin}円`);//テンプレートリテラル
+        }
+
+        //関数の実行
+        //複数の引数を読み込む場合は、,で区切る
+        yoshinoya("牛丼", "並盛", "つゆだく", 388); //牛丼の並盛、つゆだくで 388 円
+        yoshinoya("豚丼", "大盛", "たまご", 592); //豚丼の大盛、たまごで 592 円
+```
+
+### 処理を箱から出す感じ
+
+```js
+//関数の定義
+function kuku(num) {
+    for (let i = 0; i < 9; i++) {
+        console.log(num + "✕" + (i + 1) + "=" + num * (i + 1));
+    }
+}
+
+//関数の実行
+kuku(5);//numに入る↑
+
+//関数の定義
+function showMessage(message) {
+    console.log(message);
+}
+
+//関数式
+const showMessage2 = function (message) {
+    console.log(message);
+}
+
+//イベントで関数を使う
+document.body.addEventListener("click", function () {
+    showMessage("こんにちは");
+});
+```
+###　下に書いてもできる
+
+```js
+function dogName() {
+    console.log("私のうちの犬の名前は、ポチです。");
+}
+
+//関数の実行
+dogName();
+catName();
+//関数の定義
+function catName() {
+    console.log("私のうちの猫の名前は、タマです。");
+}
+```
 ## 11月9日
 - 条件分岐
 
