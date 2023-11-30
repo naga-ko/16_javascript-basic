@@ -25,14 +25,16 @@ const member_list = ["チェウォン", "サクラ", "ユンジン", "カズハ"
         //.fnAreaに上記の配列の要素を<li>で追加する関数
         const memberarea = document.querySelector(".fnArea");
         const memberPush = function (members) {
-            const ulElm = document.createElement("ul");
+            const ulElm = document.createElement("ul");//ulを作る
             for (let i = 0; i < members.length; i++) {
-                const liElm = document.createElement("li");
-                liElm.textContent = members[i];
-                ulElm.appendChild(liElm);
+                const liElm = document.createElement("li");//liは毎回作る
+                liElm.textContent = members[i];//liElmに呼び出されたものを入れる
+                ulElm.appendChild(liElm);//ulにliを追加する
             }
-            document.querySelector(".fnArea").appendChild(ulElm);
+            document.querySelector(".fnArea").appendChild(ulElm);//.fnAreaにulElmを入れる
         }
+
+        //関数の実行
         memberPush(member_list);
         memberPush(mugiwara_list);
 ```
