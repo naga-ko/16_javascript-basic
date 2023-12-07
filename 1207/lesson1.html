@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //引数1と引数2を足す、関数の定義
+        const addition = function (a, b) {
+            const c = a + b;
+            console.log(c);
+        }
+        //関数の実行
+        addition(10, 11);//コンソールに21と表示される
+        addition(30, "6");//306
+
+        //戻り値のある関数の定義
+        const addition2 = function (a, b) {
+            const c = a * b;
+            return c;//戻り値
+        }
+
+        //関数の実行
+        const result = addition2(5, 5);
+        console.log(result);//コンソールに25と表示される
+    </script>
+</body>
+
+</html>

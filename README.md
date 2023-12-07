@@ -9,9 +9,111 @@
 6. 11月2日　（木）　classlistととにかくイベント
 7. 11月9日　（木） 条件分岐
 8. 11月30日 （木）関数
+9. 12月7日　（木）関数、引数、戻り値、関数式、変数のスコープ
 
+## 12月7日
+- 引数
+- 戻り値
+- 関数式
+- 関数のスコープ
+
+### 変数のスコープ
+```js
+// グローバル変数の初期化※再代入可能にするためletを使う。
+let global = "グローバル変数";
+
+//関数funcの定義
+const func = function () {
+    //ローカル変数の初期化
+    let local = "ローカル変数";
+    //グローバル変数の表示
+    console.log(global);
+    //ローカル変数の表示
+    console.log(local);
+    global = "グローバル変数を再代入";
+    console.log(global);
+    // var global = "グローバル変数を再定義";
+    // console.log(global);
+}
+
+if (global) {
+    var local2 = "varは関数スコープ";
+    let local3 = "letはブロックスコープ";
+}
+func();
+//グローバルはvar global = "グローバル変数を再定義";で再定義されているので、undefinedになる。
+
+//グローバル変数の表示
+console.log(global);
+//ローカル変数の表示は、関数funcの中で定義されているので、呼び出せない。
+//varは関数スコープなので、if文の外で呼び出せる。
+console.log(local2);
+//letはブロックスコープなので、if文の外で呼び出せない。
+console.log(local3);
+```
+
+### 戻り値
+```html
+<p>ケーキ（450円）の税込み価格</p>
+<button class="takeOut">テイクアウト</button>
+<button class="eatIn">イートイン</button>
+<p>税込み価格は、<span class="taxIn"></span>円です。</p>
+```
+```js
+const cake = 450;
+const takeOutBtn = document.querySelector(".takeOut");
+const eatInBtn = document.querySelector(".eatIn");
+const result = document.querySelector("taxIn");
+
+const calculation = function (cake, tax) {
+    const result = cake + cake * tax;
+    return result;//戻り値
+}
+
+takeOutBtn.addEventListener("click", function () {
+    const price = calculation(cake, 0.08);
+    result.innerHTML = price;
+});
+
+eatInBtn.addEventListener("click", function () {
+    const price = calculation(cake, 0.1);
+    result.innerHTML = price;
+});
+```
+
+### 関数
+```js
+const nextStep = function () {
+    if (count === 2) {
+    count = 0;
+    } else {
+    count++;
+    }
+    imageArea.setAttribute("src", "images/" + fujiImg_list[count]);
+};
+
+//関数の実行
+nextBtn.addEventListener("click", function () {
+    nextStep();
+});
+
+//前の画像を表示
+const preStep = function () {
+    if (count === 0) {
+    count = 2;
+    } else {
+    count--;
+    }
+    imageArea.setAttribute("src", "images/" + fujiImg_list[count]);
+};
+
+//関数の実行
+preBtn.addEventListener("click", function () {
+    preStep();//関数名と()で実行
+});
+```
 ## 11月30日
--関数
+- 関数
 
 ### 配列を受け取る関数
 ```html
@@ -80,7 +182,8 @@ document.body.addEventListener("click", function () {
     showMessage("こんにちは");
 });
 ```
-###　下に書いてもできる
+
+### 下に書いてもできる
 
 ```js
 function dogName() {

@@ -14,6 +14,8 @@
         <li>猫</li>
     </ul>
     <p class="result"></p>
+    <button class="lesserafim">ルセラフィムメンバー</button>
+    <button class="onepeace">麦わらの一味</button>
     <div class="fnArea"></div>
     <script>
         const dogBtn = document.querySelector("li");
@@ -73,10 +75,20 @@
                 liElm.textContent = members[i];
                 ulElm.appendChild(liElm);
             }
+            document.querySelector(".fnArea").innerHTML = "";
             document.querySelector(".fnArea").appendChild(ulElm);
         }
-        memberPush(member_list);
-        memberPush(mugiwara_list);
+
+        const lessera_btn = document.querySelector(".lesserafim");
+        const mugiwara_btn = document.querySelector(".onepeace");
+        lessera_btn.addEventListener("click", function () {
+            memberPush(member_list);
+        });
+        mugiwara_btn.addEventListener("click", function () {
+            memberPush(mugiwara_list);
+        });
+        //memberPush(member_list);
+        //memberPush(mugiwara_list);
     </script>
 </body>
 
