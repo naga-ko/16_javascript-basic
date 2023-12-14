@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アロー関数</title>
+</head>
+
+<body>
+
+    <p>これ</p>
+    <script>
+        //従来の関数式
+        const dog = function () {
+            return "わんわん";
+        }
+
+        //関数の定義
+        function dog2() {
+            return "バウワウ";
+        }
+
+        //関数dogを実行
+        console.log(dog());
+        console.log(dog2());
+
+
+        //アロー関数式
+        const cat = () => {
+            return "にゃーにゃー";
+        }
+
+        //関数catの実行
+        console.log(cat());
+
+        //鳴き方を決めたい
+        const animal = (voice) => {
+            return voice;
+        }
+
+        //関数animalの実行
+
+        console.log(animal("みゃあみゃあ"));
+
+        const thisElm = document.querySelector("p");
+        console.log(thisElm);
+
+        thisElm.addEventListener("click", (e) => {
+            console.log("クリック");
+            // console.log(this.textContent);
+            console.log(e.target.innerText);
+        });
+    </script>
+</body>
+
+</html>

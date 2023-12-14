@@ -10,6 +10,88 @@
 7. 11月9日　（木） 条件分岐
 8. 11月30日 （木）関数
 9. 12月7日　（木）関数、引数、戻り値、関数式、変数のスコープ
+10. 12月14日 (木)コールバック関数、アロー関数
+
+## 12月14日
+- コールバック関数
+- アロー関数
+### アロー関数
+
+```js
+//鳴き方を決めたい
+const animal = (voice) => {//function()のかわりに "(関数名) =>"でOK
+    return voice;
+}
+//関数animalの実行
+console.log(animal("みゃあみゃあ"));
+
+const thisElm = document.querySelector("p");
+console.log(thisElm);
+
+thisElm.addEventListener("click", (e) => {
+    console.log("クリック");
+    // console.log(this.textContent); //アロー関数を使うとthisが使えない
+    console.log(e.target.innerText);
+});
+```
+### コールバック関数
+```js
+//関数式1
+const concatenateSpace = function (lastName, firstName) {
+    return lastName + " " + firstName;
+};
+
+//関数式2
+const useConcatenate = function (name, func) {
+    let concatName = func(name[0], name[1]);
+    console.log("結合結果：" + concatName);
+};
+
+let nameParam = ["長瀬", "光輝"];
+
+//関数式2の実行（引数1、引数2）
+useConcatenate(nameParam, concatenateSpace);
+
+//結合結果：中田 雄二
+
+
+
+//コールバック関数基本　※よく使う
+//関数式1
+const testFunc = function (func) {
+    console.log("testFuncが実行されました");
+    setTimeout(function () {//関数の実行を遅らせるため
+        func();//関数の実行
+    }, 2000);//2000ミリ秒（２秒）
+};
+
+//関数式2
+const callback = function () {
+    console.log("callbackが実行されました");
+};
+
+testFunc(callback);//関数を引っ張ってくることをコールバック関数
+```
+
+### 普通の関数式
+
+```js
+const startBtn = document.querySelector(".startBtn");
+const animalSpeed = [3, 4, 1, 3, 2];
+const animals = document.querySelectorAll("li span");
+
+// ここに関数animalsRunを作成してください。
+const animalsRun = function (list) {
+    for (let i = 0; i < list.length; i++) {
+        list[i].style.transitionDuration = animalSpeed[i] + "s";
+        list[i].classList.add("run");
+    };
+};
+
+startBtn.addEventListener("click", function () {
+    animalsRun(animals);
+});
+```
 
 ## 12月7日
 - 引数

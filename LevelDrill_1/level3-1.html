@@ -18,9 +18,11 @@
     const bigBtn = document.querySelector("button");
     const bigText = document.querySelector("span");
     let fontsize = 16;
+    console.dir(bigText);
     bigBtn.addEventListener("click", function () {
-
-    })
+      let i = i + 2
+      bigText.style.fontSize = fontsize + i + "px";
+    });
   </script>
 </body>
 
