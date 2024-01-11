@@ -11,10 +11,72 @@
 8. 11月30日 （木）関数
 9. 12月7日　（木）関数、引数、戻り値、関数式、変数のスコープ
 10. 12月14日 (木) コールバック関数、アロー関数
+11. 1月11日　（木）フォーム、オブジェクトの操作
+
+## 1月11日
+- フォーム
+- オブジェクトの操作
+
+### オブジェクトの操作
+```js
+//chatGPTで
+//「keyとプロパティの連想配列にしてください」とやると楽
+const championship = {
+    y2018: '大阪桐蔭',
+    y2019: '履正社',
+    y2020: '新型コロナ感染拡大の影響で中止',
+    y2021: '智弁和歌山',
+    y2022: '仙台育英',
+    y2023: '慶応'
+};
+const selection = {
+    2018: '大阪桐蔭',
+    2019: '東邦',
+    2020: '新型コロナ感染拡大の影響で中止',
+    2021: '東海大相模',
+    2022: '大阪桐蔭',
+    2023: '山梨学院'
+};
+console.log("選手権優勝校:", championship.y2023);//ドット記法
+console.log("選抜優勝校:", selection['2023']);//ブラケット記法
+
+const hashira_list = { water: "鱗滝左近次", worm: "胡蝶しのぶ", flame: "煉獄杏寿郎", sound: "宇髄天元", love: "甘露寺蜜璃" };
+
+//追加
+hashira_list.rock = "悲鳴嶼行冥";
+hashira_list.haze = "時透無一郎";
+hashira_list.snake = "伊黒小芭内";
+hashira_list.wind = "不死川実弥";
+
+//代入
+hashira_list.water = "冨岡義勇";
+console.log(hashira_list);
+```
+### フォーム
+
+```js
+const Btn = document.querySelector('[type="submit"]');
+Btn.addEventListener("click", function (event) {
+    event.preventDefault();//これをつけないとリロードされたりして一瞬だけしか見えない
+    const text = Number(document.querySelector(".num").value);//Numberをつけることで数値型になる
+    if (text === 2) {
+        console.log("数値の2です");
+    } else {
+        console.log("違います。")
+    }
+    const kuku = document.querySelector(".kuku");
+    for (let i = 0; i < 9; i++) {
+        const liElm = document.createElement("li");
+        liElm.textContent = text + "×" + (i + 1) + "=" + text * (i + 1);
+        kuku.appendChild(liElm);
+    }
+})
+```
 
 ## 12月14日
 - コールバック関数
 - アロー関数
+
 ### アロー関数
 
 ```js

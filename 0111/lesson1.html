@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九のフォーム</title>
+</head>
+
+<body>
+    <h1>九九のフォーム</h1>
+    <form action="">
+        <p>九九の段を入力してください</p>
+        <input type="text" name="kuku" placeholder="例）3" class="num" /> <br />
+        <input type="submit" value="送信する" />
+    </form>
+    <h2>結果</h2>
+    <ul class="kuku"></ul>
+    <script>
+        const Btn = document.querySelector('[type="submit"]');
+        Btn.addEventListener("click", function (event) {
+            event.preventDefault();
+            const text = Number(document.querySelector(".num").value);
+            if (text === 2) {
+                console.log("数値の2です");
+            } else {
+                console.log("違います。")
+            }
+            const kuku = document.querySelector(".kuku");
+            for (let i = 0; i < 9; i++) {
+                const liElm = document.createElement("li");
+                liElm.textContent = text + "×" + (i + 1) + "=" + text * (i + 1);
+                kuku.appendChild(liElm);
+            }
+        })
+    </script>
+</body>
+
+</html>

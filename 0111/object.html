@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>オブジェクトのサンプル①</h1>
+    <script>
+        // オブジェクトの定義
+        const parson = {
+            // プロパティ
+            name: "",
+            //""は空文字といってデータが何もない文字列を意味しています。
+            age: 0,
+            // メソッド
+            information: function () {
+                return "名前：" + this.name + "\n年齢：" + this.age;
+            },
+        };
+        // プロパティの値を代入
+        parson.name = "山田太郎";
+        parson.age = 18;
+        // 情報の開示
+        const info = parson.information();
+        console.log(info);
+
+        const myCar_list = {}; //空のオブジェクトを作成
+        myCar_list.make = "Ford";
+        myCar_list.model = "Mustang";
+        myCar_list.year = 1969;
+        console.log(myCar_list);
+
+        //{make: 'Ford', model: 'Mustang', year: 1969}
+        console.log(myCar_list.model);
+        console.log(myCar_list.year);
+        myCar_list["2021"] = "51年"; //ブランケットで設定
+
+        console.log(myCar_list);//オブジェクトの順番は環境によって違う　=「順番によってなにかをする」ができない
+        console.log(myCar_list["2021"]);//キーがわかっていないと指定できない
+
+        const dict = {
+            apple: "林檎",
+            banana: "バナナ",
+            orange: "オレンジ"
+        };
+
+        //新規登録
+        dict.grape = "ぶどう";
+
+        //削除
+        delete dict.orange;
+        console.log(dict);
+        //{ apple: '林檎', banana: 'バナナ', grape: 'ぶどう' }
+
+        //代入
+        dict.apple = "りんご";
+        console.log(dict);
+        //{apple: 'りんご', banana: 'バナナ', grape: 'ぶどう'}
+
+        //定数がオブジェクト、配列だった場合、そのプロパティやアイテムは更新したり削除したりデキる
+    </script>
+</body>
+
+</html>
