@@ -59,7 +59,7 @@ const Btn = document.querySelector('[type="submit"]');
 Btn.addEventListener("click", function (event) {
     event.preventDefault();//これをつけないとリロードされたりして一瞬だけしか見えない
     const text = Number(document.querySelector(".num").value);//Numberをつけることで数値型になる
-    if (text === 2) {                                 //valueも大事
+    if (text === 2) {                                 //valueでform取ることがデキる
         console.log("数値の2です");
     } else {
         console.log("違います。")
