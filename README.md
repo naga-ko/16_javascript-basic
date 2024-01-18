@@ -12,7 +12,52 @@
 9. 12月7日　（木）関数、引数、戻り値、関数式、変数のスコープ
 10. 12月14日 (木) コールバック関数、アロー関数
 11. 1月11日　（木）フォーム、オブジェクトの操作
+12. 1月18日　（木）オブジェクト
 
+## 1月18日
+- for...in文
+- for...of文
+- 配列　追加
+
+### 配列　追加
+```js
+const junishi = ["丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌"];
+const twopieces = ["子", "亥"];
+const junishis = document.querySelector(".junishis");
+
+junishi.unshift(twopieces[0]);//先頭に追加
+junishi.push(twopieces[1]);//末尾に追加
+```
+
+### for...of文
+```js
+const fruits = ["りんご", "もも", "バナナ"];
+const ul = document.querySelector("ul");
+
+for (let name of fruits) {
+    console.log(name);
+    const li = document.createElement("li");
+    li.innerHTML = name;
+    ul.appendChild(li);
+}
+```
+
+### for...in文
+```js
+const countries = {
+    Japan: "日本",
+    USA: "アメリカ",
+    China: "中国",
+    Korea: "韓国",
+};
+// console.log(countries.USA);
+// console.log(countries["USA"]);
+
+//for...in文
+for (let country in countries) {
+    console.log(countries[country]);//文字列になるからブランケットで取る
+}
+```
 ## 1月11日
 - フォーム
 - オブジェクトの操作
