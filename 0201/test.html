@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .modal {
+            transition: all 1s ease-in;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #eee;
+            border: 1px solid #cdcdcd;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            opacity: 1;
+        } */
+
+        /* .tabcontent.show {
+            display: block;
+        }
+
+        .tabcontent {
+            display: none;
+        } */
+        .tabcontent.show {
+            display: block;
+        }
+
+        .tabcontent {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <h1>三大栄養素</h1>
+    <ul>
+        <li class="protein">たんぱく質</li>
+        <li class="fats">脂質</li>
+        <li class="carbohydrate">炭水化物</li>
+    </ul> -->
+
+    <!-- <div class="counter">
+        <button class="decrease">-</button>
+        <span class="count">0</span>
+        <button class="increase">+</button>
+    </div> -->
+
+
+    <!-- <button id="openModalBtn">Open Modal</button>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>モーダルウィンドウです。</p>
+        </div>
+    </div> -->
+
+    <!-- <div class="tab">
+        <button class="tablinks">Tab1</button>
+        <button class="tablinks">Tab2</button>
+        <button class="tablinks">Tab3</button>
+    </div>
+
+    <div class="tabcontent show">
+        <h3>Tab1</h3>
+        <p>タブ1のコンテンツです。</p>
+    </div>
+    <div class="tabcontent">
+        <h3>Tab2</h3>
+        <p>タブ2のコンテンツです。</p>
+    </div>
+    <div class="tabcontent">
+        <h3>Tab3</h3>
+        <p>タブ3のコンテンツです。</p>
+    </div> -->
+
+    <!-- <ul class="list">
+        <li>バナナ</li>
+        <li>りんご</li>
+        <li>みかん</li>
+        <li>パイナップル</li>
+    </ul>
+    <button class="resultBtn">結果を表示</button>
+    <ul class="result"></ul> -->
+    <!-- <ul class="weather">
+        <li>晴れ</li>
+        <li>曇り</li>
+        <li>雨</li>
+        <li>雪</li>
+    </ul>
+    <p class="opinion"></p> -->
+    <div class="tab">
+        <button class="tablinks">Tab1</button>
+        <button class="tablinks">Tab2</button>
+        <button class="tablinks">Tab3</button>
+    </div>
+
+    <div class="tabcontent show">
+        <h3>Tab1</h3>
+        <p>タブ1のコンテンツです。</p>
+    </div>
+    <div class="tabcontent">
+        <h3>Tab2</h3>
+        <p>タブ2のコンテンツです。</p>
+    </div>
+    <div class="tabcontent">
+        <h3>Tab3</h3>
+        <p>タブ3のコンテンツです。</p>
+    </div>
+    <script>
+        // const name = "大谷翔平の";
+        // const number = "背番号は";
+        // const num = "20";
+        // const two = 2;
+        // const seven = 7;
+        // const ending = "です。"
+
+        // //大谷翔平の背番号は17です。
+        // const ohtaniText = document.createElement("p");
+
+        // ohtaniText.textContent = name + number + (num - seven + two + two) + ending;
+
+        // document.body.appendChild(ohtaniText);
+
+        // const pinkBlue = [
+        //     "ピンクブルー",
+        //     "Starry Drama",
+        //     "ジブンセイフク",
+        //     "あうん",
+        //     "ミチヲユケ",
+        //     "うそつき",
+        //     "陽はまた昇るから",
+        //     "湿気っている",
+        //     "Don!! White Rabbit",
+        //     "さもなくば誰がやる",
+        //     "Slow dance"
+        // ];
+
+        // const michiwoyuke = document.createElement("p");
+        // michiwoyuke.textContent = pinkBlue[4];
+
+        // document.body.appendChild(michiwoyuke);
+
+        // const nutrientItems = document.querySelectorAll('li');
+
+        // for (let i = 0; i < nutrientItems.length; i++) {
+        //     nutrientItems[i].addEventListener("click", function () {
+        //         console.log(nutrientItems[i].innerHTML);
+        //     })
+        // };
+
+        // const counter = document.querySelector('.counter');
+        // const decrease = counter.querySelector('.decrease');
+        // const increase = counter.querySelector('.increase');
+        // const countEle = counter.querySelector('.count');
+
+        // let count = 0;
+
+        // decrease.addEventListener('click', () => {
+        //     if (count > 0) {
+        //         count--;
+        //         countEle.textContent = count;
+        //     }
+        // });
+
+        // increase.addEventListener('click', () => {
+        //     count++;
+        //     countEle.textContent = count;
+        // });
+
+        // const openModalBtn = document.querySelector("#openModalBtn");
+        // const closeButton = document.querySelector(".close");
+        // const modal = document.querySelector(".modal")
+        // openModalBtn.addEventListener("click", function () {
+        //     modal.classList.add("active"); // モーダルにactiveクラスを追加して表示
+        // });
+
+        // // 閉じるボタンのクリックイベントリスナー
+        // closeButton.addEventListener("click", function () {
+        //     modal.classList.remove("active"); // モーダルからactiveクラスを削除して非表示
+        // });
+
+        // const fruitsArray = ["キウイ", "パパイヤ", "マンゴー"];
+        // const list = document.querySelectorAll(".list");
+        // for (let i = 0; i < list.length; i++) {
+        //     list[i].addEventListener("clilck", function () {
+        //         const fruits = list[i];
+        //     })
+        // }
+        // fruitsArray.unshift(fruits[1]);
+
+        // const resultBtn = document.querySelector(".resultBtn");
+        // const result = document.querySelector(".result")
+        // resultBtn.addEventListener("click", function () {
+        //     for (let i = 0; i < fruitsArray.length; i++) {
+        //         const liElm = document.createElement("li");
+        //         liElm.innerHTML = fruitsArray[i];
+        //         result.appendChild(liElm);
+        //     }
+        // })
+        // const fruitsArray = ["キウイ", "パパイヤ", "マンゴー"];
+        // const listItems = document.querySelectorAll('.list li');
+        // listItems.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //         fruitsArray.push(item.textContent);
+        //     });
+        // });
+
+        // const resultBtn = document.querySelector('.resultBtn');
+        // resultBtn.addEventListener('click', function () {
+        //     const resultContainer = document.querySelector('.result');
+        //     resultContainer.innerHTML = '';
+
+        //     fruitsArray.forEach(fruit => {
+        //         const listItem = document.createElement('li');
+        //         listItem.textContent = fruit;
+        //         resultContainer.appendChild(listItem);
+        //     });
+        // });
+        // 関数sayを定義
+        // function say(weather) {
+        //     const opinion = document.querySelector('.opinion');
+        //     switch (weather) {
+        //         case '晴れ':
+        //             opinion.innerHTML = "今日は良い天気で、気持ちが良いです。";
+        //             break;
+        //         case '雨':
+        //             opinion.innerHTML = "雨音が心地よく、静かな時間を楽しめます。";
+        //             break;
+        //         case '曇り':
+        //             opinion.innerHTML = "曇り空、穏やかな一日が待っている感じです。";
+        //             break;
+        //         case '雪':
+        //             opinion.innerHTML = "雪景色が美しく、雪合戦やスキーに最適です。";
+        //             break;
+        //         default:
+        //             opinion.innerHTML = "その天気についての意見はありません。";
+        //     }
+        // }
+
+        // const weathers = document.querySelectorAll(".weather li");
+        // for (let word of weathers) {
+        //     word.addEventListener("click", () => {
+        //         say(word.textContent);
+        //     });
+        // }
+
+        // const user = {
+        //     name: "鈴木花子",
+        //     age: 19,
+        //     gender: "女性",
+        //     email: "suzukihanako@example.com",
+        //     isAdmin: false,
+        //     address: {
+        //         street: "名古屋市中区栄1-2-3",
+        //         city: "名古屋市",
+        //         prefecture: "愛知県",
+        //         zipCode: "460-0008",
+        //     },
+        //     phoneNumbers: ["052-1234-5678", "070-9876-5432"],
+        //     hobbies: ["音楽鑑賞", "ショッピング", "カフェ巡り"],
+        //     birthday: new Date(2004, 0, 15), // 誕生日を YYYY, MM - 1, DD 形式で設定
+        //     accountBalance: 500.5,
+        //     preferredLanguages: ["日本語"],
+        //     subscriptionStatus: "アクティブ",
+        //     school: "名古屋市立高校",
+        // };
+        // console.log(user.gender);
+        // console.log(user.address.city);
+        // const birthday = user.birthday;
+        // const formattedBirthday = `${birthday.getFullYear()}年${birthday.getMonth() + 1}月${birthday.getDate()}日`;
+        // console.log(formattedBirthday);
+        // console.log(user.hobbies.find(hobby => hobby === "カフェ巡り"));
+        // const address = `〒${user.address.zipCode} ${user.address.prefecture}${user.address.city}${user.address.street}`;
+        // console.log(address);
+        //このcatオブジェクトだけで下記を実現してください。
+        // const cat = {
+        //     show: function () {
+        //         const body = document.querySelector('body');
+        //         const img = document.createElement('img');
+        //         img.src = 'cat.jpg';
+        //         body.appendChild(img);
+        //     }
+        // };
+
+        // cat.show();
+
+
+        // タブボタン要素を取得
+        const tabButtons = document.querySelectorAll('.tablinks');
+        // タブコンテンツ要素を取得
+        const tabContents = document.querySelectorAll('.tabcontent');
+
+        // タブボタンにクリックイベントリスナーを追加
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].addEventListener('click', function () {
+                const tabName = this.getAttribute('data-tab');
+
+                // クリックされたボタンに対応するコンテンツを表示する
+                for (let j = 0; j < tabContents.length; j++) {
+                    if (tabContents[j].id === tabName) {
+                        tabContents[j].classList.add('show');
+                    } else {
+                        tabContents[j].classList.remove('show');
+                    }
+                }
+
+                // クリックされたボタン以外のボタンのアクティブ状態を解除する
+                for (let k = 0; k < tabButtons.length; k++) {
+                    if (tabButtons[k] !== this) {
+                        tabButtons[k].classList.remove('active');
+                    }
+                }
+
+                // クリックされたボタンをアクティブにする
+                this.classList.add('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
